@@ -9,8 +9,8 @@ Achintha Fernando
 
 This contract outlines the expectations, responsibilities, and collaborative practices for our group while completing the HIT237 project assessments. It ensures all members contribute fairly and maintain professional and ethical teamwork throughout the semester.
 Section 1 - Terms and condition of Group work
-1. Group Allocation and Contribution
-2. Communication
+1. Group Allocation and Contribution around 130 words 
+2. Communication around 120 words
 3. Task ownership and Tracking
 4. Diverse working styles
 5. conflict resolution

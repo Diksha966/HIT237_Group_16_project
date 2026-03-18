@@ -22,7 +22,9 @@ The expected response time is 12 hours on weekdays and 24 hours on weekends, and
 3. Task ownership and Tracking
 4. Diverse working styles
 5. conflict resolution
+If a dispute arises within the group, the members will first address the problem through open communication. A meeting will be scheduled on Microsoft Teams where all members can discuss the matter and share their views respectfully. The aim of the discussion is to understand each member’s point and reach a common agreement that supports the progress of the project. If the issue cannot be resolved within the group in given interval of time, a majority decision will be taken. If the dispute continues to affect the project, the matter will be escalated to the unit lecturer or teaching staff for further guidance.
 6. Academic Intregity
+All group members agree to work according to Charles Darwin University’s academic integrity policies when finalizing the project. All submitted work must be original and properly referenced if external sources are used. If artificial intelligence tools or any online resources are used to assist with coding or research, the output must be checked, understood, and should be verified by all members in teams and mentioned in the report before it is included in the final submission. Each team member is responsible for ensuring that their contributions do not involve plagiarism, unauthorized copying, or misuse of external materials. The group will review all work together before submission to make sure it follows academic integrity standards.
 Section 2 - Provisional Milestones and Checkpoints
 Assessment 1 - Group Contract
 Assessment 2- Django Application Development

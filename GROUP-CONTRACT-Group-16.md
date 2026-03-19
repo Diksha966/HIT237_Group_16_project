@@ -19,25 +19,17 @@ A fair contribution includes working equally, completing tasks on time, communic
 
 As we all discussed, the expected response time is 12 hours on weekdays and 24 hours on weekends, and it is expected that everyone will follow this timeline. This communication strategy will help our group achieve effective teamwork, and the pathway for successful completion of our group project.
 
-#Task ownership and Tracking
-
-The group project will be divided into equal tasks carrying the same weight to ensure equality of the work. Thereby, those tasks will be given to each group member, and they will be accountable for that work and to deliver it within the given deadlines. To track the work and its progress, each member will submit their work to a shared GitHub repository where all the members will be able to review and check whether there are any issues. 
+#Task ownership and Tracking : The group project will be divided into equal tasks carrying the same weight to ensure equality of the work. Thereby, those tasks will be given to each group member, and they will be accountable for that work and to deliver it within the given deadlines. To track the work and its progress, each member will submit their work to a shared GitHub repository where all the members will be able to review and check whether there are any issues. 
 
 Weekly meetings will be conducted through MS Teams to monitor progress, discuss challenges, and ensure the project stays on track.  If someone is unable to deliver work with sufficient effort without having reasonable circumstances, they will be notified to the CLF if needed. 
 
-#Diverse working styles
-
-All the group members will be committed to delivering the project with high quality work and the group has acknowledges that the delivery time, task quality and working preferences of each individual may differ. So to ensure transparency the members will be committed to share their work regularly on GitHub and Teams to get it reviewed by other members as well. There will be flexible meeting times so everyone can participate in the meetings.
+#Diverse working styles : All the group members will be committed to delivering the project with high quality work and the group has acknowledges that the delivery time, task quality and working preferences of each individual may differ. So to ensure transparency the members will be committed to share their work regularly on GitHub and Teams to get it reviewed by other members as well. There will be flexible meeting times so everyone can participate in the meetings.
 
 All the members are expected to demonstrate equal participation, good work habits, and ethical behaviour throughout the project, respecting each other's ideas and opinions to ensure a collaborative outcome.
 
-#Conflict resolution
+#Conflict resolution : If a dispute arises within the group, the members will first address the problem through open communication. A meeting will be scheduled on Microsoft Teams where all members can discuss the matter and share their views respectfully. The aim of the discussion is to understand each member’s point and reach a common agreement that supports the progress of the project. If the issue cannot be resolved within the group in given interval of time, a majority decision will be taken. If the dispute continues to affect the project, the matter will be escalated to the unit lecturer or teaching staff for further guidance.
 
-If a dispute arises within the group, the members will first address the problem through open communication. A meeting will be scheduled on Microsoft Teams where all members can discuss the matter and share their views respectfully. The aim of the discussion is to understand each member’s point and reach a common agreement that supports the progress of the project. If the issue cannot be resolved within the group in given interval of time, a majority decision will be taken. If the dispute continues to affect the project, the matter will be escalated to the unit lecturer or teaching staff for further guidance.
-
-#Academic Intregity
-
-All group members agree to work according to Charles Darwin University’s academic integrity policies when finalizing the project. All submitted work must be original and properly referenced if external sources are used. If artificial intelligence tools or any online resources are used to assist with coding or research, the output must be checked, understood, and should be verified by all members in teams and mentioned in the report before it is included in the final submission. Each team member is responsible for ensuring that their contributions do not involve plagiarism, unauthorized copying, or misuse of external materials. The group will review all work together before submission to make sure it follows academic integrity standards.
+#Academic Intregity : All group members agree to work according to Charles Darwin University’s academic integrity policies when finalizing the project. All submitted work must be original and properly referenced if external sources are used. If artificial intelligence tools or any online resources are used to assist with coding or research, the output must be checked, understood, and should be verified by all members in teams and mentioned in the report before it is included in the final submission. Each team member is responsible for ensuring that their contributions do not involve plagiarism, unauthorized copying, or misuse of external materials. The group will review all work together before submission to make sure it follows academic integrity standards.
 
 Section 2 – Provisional Milestones and Checkpoints
 
@@ -55,12 +47,19 @@ Key Milestones and Timeline
 Note: This plan may evolve throughout the semester as the team refines the application and responds to changing requirements.
 
 •	Week 2: Project setup (GitHub, Django, workflow) – All members
+
 •	Week 3: Database design and ERD – Diksha, Achinchtha
+
 •	Weeks 4–5: Core development – Armaan, Achinchtha
+
 •	Week 5: ADR documentation – Diksha, Chetanya
+
 •	Week 6: Integration and testing – All members
+
 •	Week 7: Authentication and extensions – Armaan, Achinchtha
+
 •	Week 8: Testing and QA – Armaan, Chetanya
+
 •	Week 9: Final integration and documentation – All members
 
 Closing Statement

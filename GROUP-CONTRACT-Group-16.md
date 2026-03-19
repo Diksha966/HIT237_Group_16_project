@@ -1,5 +1,5 @@
 HIT237 – Group Contract
-Project Theme: Remote Housing Crisis
+**Project Theme: Remote Housing Crisis**
 Group Members
 
 Chetanya Thukral
@@ -11,7 +11,7 @@ This contract outlines the expectations, responsibilities, and collaborative pra
 
 Section 1 - Terms and condition of Group work
 
-#Group Allocation and Contribution : Grades will be awarded equally to each team member. Members should contribute equally to the project. The group agrees that everyone will receive equal marks if they contribute to the project, attend regular MS Teams meetings, do their assigned work on time, and communicate with the Team properly. If a member is unable to do their work or contribute to the Team, the group may ask the lecturer to differentiate marks based on individual contribution. 
+<big>Group Allocation and Contribution</big>: Grades will be awarded equally to each team member. Members should contribute equally to the project. The group agrees that everyone will receive equal marks if they contribute to the project, attend regular MS Teams meetings, do their assigned work on time, and communicate with the Team properly. If a member is unable to do their work or contribute to the Team, the group may ask the lecturer to differentiate marks based on individual contribution. 
 
 A fair contribution includes working equally, completing tasks on time, communicating with the group, and participating equally. Each member is expected to follow these guidelines to ensure our project runs smoothly.
 

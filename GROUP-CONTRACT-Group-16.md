@@ -20,7 +20,13 @@ A fair contribution includes working equally, completing tasks on time, communic
 The expected response time is 12 hours on weekdays and 24 hours on weekends, and everyone is expected to follow this timeline. This communication strategy will help our group achieve effective teamwork, a clear guideline, and the successful completion of our group project.
 
 3. Task ownership and Tracking
+The group project will be divided into equal tasks carrying the same weight to ensure equality of the work. Thereby, those tasks will be given to each group member, and they will be accountable for that work and to deliver it within the given deadlines. To track the work and its progress, each member will submit their work to a shared GitHub repository where all the members will be able to review and check whether there are any issues. 
+Weekly meetings will be conducted through MS Teams to monitor progress, discuss challenges, and ensure the project stays on track.  If someone is unable to deliver work with sufficient effort without having reasonable circumstances, they will be notified to the CLF if needed. 
+
 4. Diverse working styles
+All the group members will be committed to delivering the project with high quality work and the group has acknowledges that the delivery time, task quality and working preferences of each individual may differ. So to ensure transparency the members will be committed to share their work regularly on GitHub and Teams to get it reviewed by other members as well. There will be flexible meeting times so everyone can participate in the meetings.
+All the members are expected to demonstrate equal participation, good work habits, and ethical behaviour throughout the project, respecting each other's ideas and opinions to ensure a collaborative outcome.
+
 5. conflict resolution
 If a dispute arises within the group, the members will first address the problem through open communication. A meeting will be scheduled on Microsoft Teams where all members can discuss the matter and share their views respectfully. The aim of the discussion is to understand each member’s point and reach a common agreement that supports the progress of the project. If the issue cannot be resolved within the group in given interval of time, a majority decision will be taken. If the dispute continues to affect the project, the matter will be escalated to the unit lecturer or teaching staff for further guidance.
 6. Academic Intregity

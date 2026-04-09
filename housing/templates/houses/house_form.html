@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="card" style="max-width: 600px; margin:auto;">
+
+    <h2>🏡 Add House</h2>
+
+    <form method="post">
+        {% csrf_token %}
+        <label>Address</label>
+{{ form.address }}
+
+<label>Resident</label>
+{{ form.resident }}
+
+        <button type="submit" class="btn btn-success">Save</button>
+        <a href="{% url 'house_list' %}" class="btn btn-danger">Cancel</a>
+    </form>
+
+</div>
+
+{% endblock %}

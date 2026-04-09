@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2 style="margin-bottom: 20px;">🏡 Houses</h2>
+
+<!-- ADD HOUSE BUTTON -->
+<a href="{% url 'house_create' %}" class="btn btn-success" style="margin-bottom: 20px;">
+    + Add House
+</a>
+
+{% for house in object_list %}
+    <div class="card">
+        <h3>{{ house.address }}</h3>
+        <p><strong>Resident:</strong> {{ house.resident.name }}</p>
+    </div>
+{% empty %}
+    <div class="card" style="text-align:center;">
+        <h3>No houses available 😢</h3>
+        <p>Add a new house to get started.</p>
+    </div>
+{% endfor %}
+
+{% endblock %}

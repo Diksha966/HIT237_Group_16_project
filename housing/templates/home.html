@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="card" style="text-align:center; padding:40px;">
+
+    <h1 style="margin-bottom: 10px;">🏠 Housing Maintenance System</h1>
+    <p style="margin-bottom: 20px; font-size: 16px;">
+        Manage houses and maintenance requests easily.
+    </p>
+
+    <!-- ACTION BUTTONS -->
+    <div style="margin-top: 20px;">
+        <a href="{% url 'house_list' %}" class="btn btn-primary">View Houses</a>
+        <a href="{% url 'request_list' %}" class="btn btn-success">View Requests</a>
+        <a href="{% url 'request_create' %}" class="btn btn-danger">+ New Request</a>
+    </div>
+
+</div>
+
+<!-- FEATURE CARDS -->
+<div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap:20px; margin-top:30px;">
+
+    <div class="card">
+        <h3>🏡 Houses</h3>
+        <p>View and manage all houses assigned to residents.</p>
+    </div>
+
+    <div class="card">
+        <h3>🔧 Requests</h3>
+        <p>Create and track maintenance requests easily.</p>
+    </div>
+
+    <div class="card">
+        <h3>⚡ Fast & Simple</h3>
+        <p>Clean interface built with Django class-based views.</p>
+    </div>
+
+</div>
+
+{% endblock %}

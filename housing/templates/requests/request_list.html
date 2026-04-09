@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<a href="{% url 'request_create' %}" class="btn btn-success" style="margin-bottom: 20px;">
+    + New Request
+</a>
+
+<h2 style="margin-bottom: 20px;">🔧 Maintenance Requests</h2>
+
+{% for request in object_list %}
+    <div class="card">
+
+        <div style="display:flex; justify-content:space-between;">
+            <h3>{{ request.title }}</h3>
+            <span>{{ request.status }}</span>
+        </div>
+
+        <p><strong>Description:</strong> {{ request.description }}</p>
+        <p><strong>House:</strong> {{ request.house.address }}</p>
+
+        <div style="margin-top:10px;">
+            <a href="{% url 'request_update' request.id %}" class="btn btn-primary">Edit</a>
+            <a href="{% url 'request_delete' request.id %}" class="btn btn-danger">Delete</a>
+        </div>
+
+    </div>
+
+{% empty %}
+    <div class="card">No requests found</div>
+{% endfor %}
+
+{% endblock %}

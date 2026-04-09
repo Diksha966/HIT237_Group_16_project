@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="card" style="max-width: 500px; margin:auto; text-align:center;">
+
+    <h2 style="margin-bottom: 15px;">⚠️ Delete Request</h2>
+
+    <p style="margin-bottom: 20px;">
+        Are you sure you want to delete 
+        <strong>"{{ object.title }}"</strong>?
+        style="color:#ef4444; font-weight:500;"
+    </p>
+
+    <form method="post">
+        {% csrf_token %}
+
+        <button type="submit" class="btn btn-danger">Yes, Delete</button>
+        <a href="{% url 'request_list' %}" class="btn btn-primary">Cancel</a>
+    </form>
+
+</div>
+
+{% endblock %}

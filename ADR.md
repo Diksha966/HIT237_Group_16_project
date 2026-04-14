@@ -80,3 +80,60 @@ views.py (ListView, CreateView, UpdateView, DeleteView for MaintenanceRequest)
 Consequences:
 
 By using this approach, code duplication and maintainability can be improved. It also makes the system easier to extend in the future. 
+
+##ADR 4##
+
+Title: Use Django QuerySet API for Data Retrieval
+
+Status: Accepted
+
+Context:
+
+The system needs to retrieve and display maintenance requests in different ways, such as showing all requests, filtering requests by resident, and filtering by status. Efficient data retrieval is important for the system to work properly.
+
+Alternatives considered:
+
+One option was to use raw SQL queries to interact with the database directly. Another option was to use Django’s QuerySet API.
+
+Raw SQL provides more control but can make the code more sophisticated and harder to maintain. Django’s QuerySet API provides a simpler and more readable way to interact with the database.
+
+Decision:
+
+Our team ended up using Django’s QuerySet API because it integrates well with Django models and disentangles database operations. It allows us to fetch and filter data using some methods like all() and filter().
+
+Code reference:
+
+views.py (MaintenanceRequest queries using all() and filter())
+
+Consequences:
+
+This improves code readability and maintainability. It also lessens the possible pitfall of errors compared to the raw SQL. However, it may be less flexible for very complex queries.
+
+### ARD 5 ###
+
+Title: Use Django Built-in Authentication System
+
+Status: Accepted
+
+Context: 
+
+The system requires users to log in so that the residents and housing officers can securely access and manage their maintenance requests. Different users need controlled access to specific system features.
+
+Alternatives considered:
+
+One option was to build a custom authentication system from scratch. Another option was to use Django's built-in authentication system.
+
+Building a custom system would take more time and could introduce security issues. Django's built-in authentication system is already tested and secure.
+
+Decision:
+
+We decided to use Django's built-in authentication system because it provides secure and reliable user management. It includes features such as login, logout, and user authentication, and integrates well with the Django models and views of the project.
+
+Code reference:
+views.py (login/logout handling), settings.py (authentication configuration)
+
+Consequences:
+This method improves security and also saves development time. It also features safeguards to ensure authentication is handled using a robust system. However, it offers less flexibility compared to building a fully custom solution.
+
+### ADR 6 ###
+

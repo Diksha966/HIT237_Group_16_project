@@ -68,3 +68,13 @@ Note: This plan may evolve throughout the semester as the team refines the appli
 
 This contract serves as a professional agreement among all team members to collaborate effectively, maintain accountability, and ensure consistent progress throughout the HIT237 project.
 
+## PROJECT PROGRESS UPDATE 
+
+#The ERD diagram has been designed and finalized.
+
+#Key architectural decisions have been documented in ADR.md.
+
+#The Django project has been set up, and initial models have been implemented.
+
+#Team members have started working on different components of the system.
+

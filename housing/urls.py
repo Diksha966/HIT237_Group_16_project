@@ -1,30 +1,22 @@
 from django.urls import path
-from .views import (
-    home,
-    HouseListView,
-    HouseCreateView,
-    MaintenanceListView,
-    MaintenanceCreateView,
-    MaintenanceUpdateView,
-    MaintenanceDeleteView,
-    ResidentListView,
-    ResidentCreateView,
-)
+from . import views
 
 urlpatterns = [
-    path('', home, name='home'),
+    path('', views.home, name='home'),
 
-    # Houses
-    path('houses/', HouseListView.as_view(), name='house_list'),
-    path('houses/create/', HouseCreateView.as_view(), name='house_create'),
+    # HOUSES
+    path('houses/', views.HouseListView.as_view(), name='house_list'),
+    path('houses/create/', views.HouseCreateView.as_view(), name='house_create'),
+    path('houses/<int:pk>/update/', views.HouseUpdateView.as_view(), name='house_update'),
+    path('houses/<int:pk>/delete/', views.HouseDeleteView.as_view(), name='house_delete'),
 
-    # Requests
-    path('requests/', MaintenanceListView.as_view(), name='request_list'),
-    path('requests/create/', MaintenanceCreateView.as_view(), name='request_create'),
-    path('requests/<int:pk>/update/', MaintenanceUpdateView.as_view(), name='request_update'),
-    path('requests/<int:pk>/delete/', MaintenanceDeleteView.as_view(), name='request_delete'),
+    # REQUESTS
+    path('requests/', views.RequestListView.as_view(), name='request_list'),
+    path('requests/create/', views.RequestCreateView.as_view(), name='request_create'),
+    path('requests/<int:pk>/update/', views.RequestUpdateView.as_view(), name='request_update'),
+    path('requests/<int:pk>/delete/', views.RequestDeleteView.as_view(), name='request_delete'),
 
-    # Residents
-    path('residents/', ResidentListView.as_view(), name='resident_list'),
-    path('residents/create/', ResidentCreateView.as_view(), name='resident_create'),
+    # RESIDENTS
+    path('residents/', views.ResidentListView.as_view(), name='resident_list'),
+    path('residents/create/', views.ResidentCreateView.as_view(), name='resident_create'),
 ]

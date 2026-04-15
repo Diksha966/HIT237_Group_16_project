@@ -4,15 +4,24 @@
 
 <h2 style="margin-bottom: 20px;">🏡 Houses</h2>
 
-<!-- ADD HOUSE BUTTON -->
 <a href="{% url 'house_create' %}" class="btn btn-success" style="margin-bottom: 20px;">
     + Add House
 </a>
 
-{% for house in object_list %}
+{% for house in houses %}
     <div class="card">
         <h3>{{ house.address }}</h3>
-        <p><strong>Resident:</strong> {{ house.resident.name }}</p>
+        <p><strong>Residents:</strong>
+            {% for r in house.residents.all %}
+                {{ r.first_name }} {{ r.last_name }}{% if not forloop.last %}, {% endif %}
+            {% empty %}
+                No residents
+            {% endfor %}
+        </p>
+
+        <!-- ACTION BUTTONS -->
+        <a href="{% url 'house_update' house.id %}">Edit</a>
+        <a href="{% url 'house_delete' house.id %}">Delete</a>
     </div>
 {% empty %}
     <div class="card" style="text-align:center;">

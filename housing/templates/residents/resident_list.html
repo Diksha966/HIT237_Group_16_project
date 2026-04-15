@@ -2,18 +2,15 @@
 
 {% block content %}
 
-<h2 style="margin-bottom: 20px;">👥 Residents</h2>
+<h2>👥 Residents</h2>
 
 <a href="{% url 'resident_create' %}" class="btn btn-success" style="margin-bottom: 20px;">
     + Add Resident
 </a>
 
-{% for resident in object_list %}
-    <div class="card">
-        <h3>{{ resident.name }}</h3>
-    </div>
-{% empty %}
-    <div class="card">No residents found</div>
+{% for resident in residents %} <div class="card"> <h3>{{ resident.first_name }} {{ resident.last_name }}</h3> <p><strong>House:</strong> {{ resident.house.address }}</p> </div>
+{% empty %} <div class="card">No residents found</div>
 {% endfor %}
 
 {% endblock %}
+

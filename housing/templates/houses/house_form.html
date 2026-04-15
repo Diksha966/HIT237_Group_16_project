@@ -8,8 +8,14 @@
 
     <form method="post">
         {% csrf_token %}
-        <label>Address</label>
-{{ form.address }}
+        <form method="post">
+            {% csrf_token %}
+        
+            {{ form.as_p }}
+        
+            <button type="submit" class="btn btn-success">Save</button>
+            <a href="{% url 'house_list' %}" class="btn btn-danger">Cancel</a>
+        </form>
 
 <label>Resident</label>
 {{ form.resident }}

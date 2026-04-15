@@ -3,49 +3,47 @@
 {% block content %}
 
 <div class="card" style="max-width: 600px; margin: auto;">
-    
-    <h2 style="margin-bottom: 20px;">
-        📝 {{ view.object|default_if_none:"Create" }} Request
-    </h2>
 
-    <form method="post">
-        {% csrf_token %}
+```
+<h2 style="margin-bottom: 20px;">
+    📝 {% if view.object %}Edit{% else %}Create{% endif %} Request
+</h2>
 
-        <!-- TITLE -->
-        <label>Title</label>
-        {{ form.title }}
-        {% if form.title.errors %}
-            <small style="color:red;">{{ form.title.errors }}</small>
-        {% endif %}
+<form method="post">
+    {% csrf_token %}
 
-        <!-- DESCRIPTION -->
-        <label>Description</label>
-        {{ form.description }}
-        {% if form.description.errors %}
-            <small style="color:red;">{{ form.description.errors }}</small>
-        {% endif %}
+    <!-- TITLE -->
+    <label>Title</label>
+    {{ form.title }}
 
-        <!-- STATUS -->
-        <label>Status</label>
-        {{ form.status }}
-        {% if form.status.errors %}
-            <small style="color:red;">{{ form.status.errors }}</small>
-        {% endif %}
+    <!-- DESCRIPTION -->
+    <label>Description</label>
+    {{ form.description }}
 
-        <!-- HOUSE -->
-        <label>House</label>
-        {{ form.house }}
-        {% if form.house.errors %}
-            <small style="color:red;">{{ form.house.errors }}</small>
-        {% endif %}
+    <!-- STATUS -->
+    <label>Status</label>
+    {{ form.status }}
 
-        <!-- BUTTONS -->
-        <div style="margin-top: 15px;">
-            <button type="submit" class="btn btn-success">Submit</button>
-            <a href="{% url 'request_list' %}" class="btn btn-danger">Cancel</a>
-        </div>
+    <!-- CATEGORY -->
+    <label>Category</label>
+    {{ form.category }}
 
-    </form>
+    <!-- HOUSE -->
+    <label>House</label>
+    {{ form.house }}
+
+    <!-- RESIDENT -->
+    <label>Resident</label>
+    {{ form.resident }}
+
+    <!-- BUTTONS -->
+    <div style="margin-top: 15px;">
+        <button type="submit" class="btn btn-success">Submit</button>
+        <a href="{% url 'request_list' %}" class="btn btn-danger">Cancel</a>
+    </div>
+
+</form>
+```
 
 </div>
 

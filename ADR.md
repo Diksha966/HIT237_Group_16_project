@@ -1,6 +1,6 @@
 ### ADR 1 
 
-#### Title :### Use Django MTV Architecture
+#### Title : Use Django MTV Architecture
 
 Status: Accepted
 
@@ -53,7 +53,7 @@ Consequences:
 
 This approach improves data consistency and makes it easier to fetch related data using Django’s ORM. It also makes the system more structured. However, it requires understanding how relational databases work.
 
-### ADR 3###
+### ADR 3
 
 #### Title: Use Class-Based Views for Handling Requests
 
@@ -135,7 +135,7 @@ views.py ( Planned use of Django Architecture system using, login/logout handlin
 Consequences:
 This method improves security and also saves development time. It also features safeguards to ensure authentication is handled using a robust system. However, it offers less flexibility compared to building a fully custom solution.
 
-### ADR 6 ###
+### ADR 6 
 
 #### Title: Use Template Inheritance for UI Structure
 

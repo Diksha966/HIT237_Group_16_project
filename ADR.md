@@ -1,6 +1,6 @@
-#### ADR 1 #### 
+### ADR 1 
 
-### Title :### Use Django MTV Architecture
+#### Title :### Use Django MTV Architecture
 
 Status: Accepted
 
@@ -25,9 +25,9 @@ Consequences:
 
 This approach makes the code more organized and easier to maintain. This helps team members to work on different parts of the system. However, it may be a bit difficult to connect everything at first.
 
-#### ADR 2 ####
+### ADR 2 
 
-### Title: Use ForeignKey Relationships for Model Associations
+#### Title: Use ForeignKey Relationships for Model Associations
 
 Status: Accepted
 
@@ -47,15 +47,15 @@ We decided to use ForeignKey relationships in the MaintenanceRequest model to li
 
 Code reference:
 
-models.py (MaintenanceRequest model – resident and house ForeignKey fields)
+models.py (MaintenanceRequest model – resident and house ForeignKey fields) line 50 and 51.
 
 Consequences:
 
 This approach improves data consistency and makes it easier to fetch related data using Django’s ORM. It also makes the system more structured. However, it requires understanding how relational databases work.
 
-#### ADR 3###
+### ADR 3###
 
-### Title: Use Class-Based Views for Handling Requests
+#### Title: Use Class-Based Views for Handling Requests
 
 Status: Accepted
 
@@ -75,15 +75,15 @@ We decided to use Class-Based Views because they allow us to reuse common functi
 
 Code reference:
 
-views.py (ListView, CreateView, UpdateView, DeleteView for MaintenanceRequest)
+views.py ( Project level- Planned implementation using, ListView, CreateView, UpdateView, DeleteView for MaintenanceRequest)
 
 Consequences:
 
 By using this approach, code duplication and maintainability can be improved. It also makes the system easier to extend in the future. 
 
-#### ADR 4##
+### ADR 4
 
-### Title: Use Django QuerySet API for Data Retrieval
+#### Title: Use Django QuerySet API for Data Retrieval
 
 Status: Accepted
 
@@ -103,15 +103,15 @@ Our team ended up using Django’s QuerySet API because it integrates well with 
 
 Code reference:
 
-views.py (MaintenanceRequest queries using all() and filter())
+views.py ( Project level- Planned use of, MaintenanceRequest queries using all() and filter())
 
 Consequences:
 
 This improves code readability and maintainability. It also lessens the possible pitfall of errors compared to the raw SQL. However, it may be less flexible for very complex queries.
 
-#### ARD 5 ###
+### ARD 5 ###
 
-### Title: Use Django Built-in Authentication System
+#### Title: Use Django Built-in Authentication System
 
 Status: Accepted
 
@@ -130,14 +130,14 @@ Decision:
 We decided to use Django's built-in authentication system because it provides secure and reliable user management. It includes features such as login, logout, and user authentication, and integrates well with the Django models and views of the project.
 
 Code reference:
-views.py (login/logout handling), settings.py (authentication configuration)
+views.py ( Planned use of Django Architecture system using, login/logout handling), settings.py (authentication configuration)
 
 Consequences:
 This method improves security and also saves development time. It also features safeguards to ensure authentication is handled using a robust system. However, it offers less flexibility compared to building a fully custom solution.
 
-#### ADR 6 ###
+### ADR 6 ###
 
-### Title: Use Template Inheritance for UI Structure
+#### Title: Use Template Inheritance for UI Structure
 
 Status: Accepted
 
@@ -148,7 +148,7 @@ Creating separate files would result in duplicate code and make maintenance more
 
 Decision: We decided to use Django template inheritance, with creating a base template that includes common elements such as the header, footer, and navigations. Other templates have also been used to extend this base template, ensuring consistency across all the applications.
 
-Code reference: templates/base.html, templates/*.html
+Code reference: templates/base.html, templates/home.html
 
 Consequences: This approach reduces code duplication and ensures a consistent user interface. It also makes it easier to update the layout. However, it requires understanding how templates extend from a base file.
 

@@ -22,4 +22,3 @@ class MaintenanceRequestAdmin(admin.ModelAdmin):
     list_display = ('title', 'house', 'resident', 'status', 'category', 'created_at', 'updated_at')
     list_filter = ('status', 'category', 'house')
     search_fields = ('title', 'description', 'resident__first_name', 'resident__last_name')
-from django.contrib import admin

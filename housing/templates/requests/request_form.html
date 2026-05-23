@@ -3,48 +3,42 @@
 {% block content %}
 
 <div class="card" style="max-width: 600px; margin: auto;">
+    <h2 style="margin-bottom: 20px;">
+        📝 {% if view.object %}Edit{% else %}Create{% endif %} Request
+    </h2>
 
-```
-<h2 style="margin-bottom: 20px;">
-    📝 {% if view.object %}Edit{% else %}Create{% endif %} Request
-</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
 
-<form method="post">
-    {% csrf_token %}
+        <div style="margin-top: 15px;">
+            <button type="submit" class="btn btn-success">Submit</button>
+            <a href="{% url 'request_list' %}" class="btn btn-danger">Cancel</a>
+        </div>
+    </form>
+</div>
 
-    <!-- TITLE -->
-    <label>Title</label>
-    {{ form.title }}
+{% endblock %}{% extends 'base.html' %}
 
-    <!-- DESCRIPTION -->
-    <label>Description</label>
-    {{ form.description }}
+{% extends 'base.html' %}
 
-    <!-- STATUS -->
-    <label>Status</label>
-    {{ form.status }}
+{% block content %}
 
-    <!-- CATEGORY -->
-    <label>Category</label>
-    {{ form.category }}
+<div class="card" style="max-width: 600px; margin: auto;">
+    <h2 style="margin-bottom: 20px;">
+        📝 {% if view.object %}Edit{% else %}Create{% endif %} Request
+    </h2>
 
-    <!-- HOUSE -->
-    <label>House</label>
-    {{ form.house }}
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
 
-    <!-- RESIDENT -->
-    <label>Resident</label>
-    {{ form.resident }}
-
-    <!-- BUTTONS -->
-    <div style="margin-top: 15px;">
-        <button type="submit" class="btn btn-success">Submit</button>
-        <a href="{% url 'request_list' %}" class="btn btn-danger">Cancel</a>
-    </div>
-
-</form>
-```
-
+        <div style="margin-top: 15px;">
+            <button type="submit" class="btn btn-success">Submit</button>
+            <a href="{% url 'request_list' %}" class="btn btn-danger">Cancel</a>
+        </div>
+    </form>
 </div>
 
 {% endblock %}
+    <label>Status</label>

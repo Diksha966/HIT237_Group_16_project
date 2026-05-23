@@ -33,26 +33,42 @@ class Resident(models.Model):
 
 
 class MaintenanceRequest(models.Model):
-    class Status(models.TextChoices):
-        PENDING = "PENDING", "Pending"
-        IN_PROGRESS = "IN_PROGRESS", "In Progress"
-        RESOLVED = "RESOLVED", "Resolved"
-        REJECTED = "REJECTED", "Rejected"
+    class Status:
+        PENDING = "PENDING"
+        IN_PROGRESS = "IN_PROGRESS"
+        RESOLVED = "RESOLVED"
+        REJECTED = "REJECTED"
 
-    class Category(models.TextChoices):
-        PLUMBING = "PLUMBING", "Plumbing"
-        ELECTRICAL = "ELECTRICAL", "Electrical"
-        HVAC = "HVAC", "HVAC"
-        PAINTING = "PAINTING", "Painting"
-        STRUCTURAL = "STRUCTURAL", "Structural"
-        OTHER = "OTHER", "Other"
+        CHOICES = (
+            (PENDING, "Pending"),
+            (IN_PROGRESS, "In Progress"),
+            (RESOLVED, "Resolved"),
+            (REJECTED, "Rejected"),
+        )
+
+    class Category:
+        PLUMBING = "PLUMBING"
+        ELECTRICAL = "ELECTRICAL"
+        HVAC = "HVAC"
+        PAINTING = "PAINTING"
+        STRUCTURAL = "STRUCTURAL"
+        OTHER = "OTHER"
+
+        CHOICES = (
+            (PLUMBING, "Plumbing"),
+            (ELECTRICAL, "Electrical"),
+            (HVAC, "HVAC"),
+            (PAINTING, "Painting"),
+            (STRUCTURAL, "Structural"),
+            (OTHER, "Other"),
+        )
 
     house = models.ForeignKey(House, on_delete=models.CASCADE, related_name="maintenance_requests")
     resident = models.ForeignKey(Resident, on_delete=models.CASCADE, related_name="maintenance_requests")
     title = models.CharField(max_length=200)
     description = models.TextField(blank=True)
-    status = models.CharField(max_length=32, choices=Status.choices, default=Status.PENDING)
-    category = models.CharField(max_length=32, choices=Category.choices, default=Category.OTHER)
+    status = models.CharField(max_length=32, choices=Status.CHOICES, default=Status.PENDING)
+    category = models.CharField(max_length=32, choices=Category.CHOICES, default=Category.OTHER)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 

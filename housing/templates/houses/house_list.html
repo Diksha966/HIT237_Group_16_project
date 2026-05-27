@@ -2,32 +2,62 @@
 
 {% block content %}
 
-<h2 style="margin-bottom: 20px;">🏡 Houses</h2>
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h2><i class="bi bi-building"></i> Houses</h2>
+    {% if user.is_authenticated %}
+        <a href="{% url 'house_create' %}" class="btn btn-success">
+            <i class="bi bi-plus-circle"></i> Add House
+        </a>
+    {% endif %}
+</div>
 
-<a href="{% url 'house_create' %}" class="btn btn-success" style="margin-bottom: 20px;">
-    + Add House
-</a>
-
-{% for house in houses %}
-    <div class="card">
-        <h3>{{ house.address }}</h3>
-        <p><strong>Residents:</strong>
-            {% for r in house.residents.all %}
-                {{ r.first_name }} {{ r.last_name }}{% if not forloop.last %}, {% endif %}
-            {% empty %}
-                No residents
-            {% endfor %}
-        </p>
-
-        <!-- ACTION BUTTONS -->
-        <a href="{% url 'house_update' house.id %}">Edit</a>
-        <a href="{% url 'house_delete' house.id %}">Delete</a>
+{% if houses %}
+    <div class="row g-4">
+        {% for house in houses %}
+        <div class="col-md-6 col-lg-4">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h5 class="card-title">
+                        <i class="bi bi-house"></i> {{ house.address }}
+                    </h5>
+                    <p class="card-text">
+                        <strong><i class="bi bi-geo-alt"></i> Location:</strong><br>
+                        {{ house.city }}, {{ house.state }} {{ house.zip_code }}
+                    </p>
+                    <p class="card-text">
+                        <strong><i class="bi bi-cash-coin"></i> Rent:</strong><br>
+                        ${{ house.rent|default:"Not set" }}
+                    </p>
+                    <p class="card-text">
+                        <strong><i class="bi bi-people"></i> Residents:</strong><br>
+                        {% for r in house.residents.all %}
+                            <span class="badge bg-info">{{ r.first_name }} {{ r.last_name }}</span>
+                        {% empty %}
+                            <span class="text-muted">No residents</span>
+                        {% endfor %}
+                    </p>
+                </div>
+                {% if user.is_authenticated %}
+                <div class="card-footer bg-light d-flex gap-2">
+                    <a href="{% url 'house_update' house.id %}" class="btn btn-sm btn-primary flex-grow-1">
+                        <i class="bi bi-pencil"></i> Edit
+                    </a>
+                    <a href="{% url 'house_delete' house.id %}" class="btn btn-sm btn-danger flex-grow-1">
+                        <i class="bi bi-trash"></i> Delete
+                    </a>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+        {% endfor %}
     </div>
-{% empty %}
-    <div class="card" style="text-align:center;">
-        <h3>No houses available 😢</h3>
-        <p>Add a new house to get started.</p>
+{% else %}
+    <div class="card text-center">
+        <div class="card-body">
+            <h3><i class="bi bi-inbox"></i> No houses available</h3>
+            <p class="text-muted mb-0">Add a new house to get started.</p>
+        </div>
     </div>
-{% endfor %}
+{% endif %}
 
 {% endblock %}

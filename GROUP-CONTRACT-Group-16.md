@@ -78,3 +78,11 @@ This contract serves as a professional agreement among all team members to colla
 
 #Team members have started working on different components of the system.
 
+## Assessment 3 update
+
+- Authentication has been added using Django's built-in auth system.
+- CRUD operations now call a service layer rather than placing business rules in views.
+- Exception handling now blocks invalid house/resident request combinations and guarded deletes.
+- A test suite now covers services, permissions, and authenticated create actions.
+- Supplementary documentation has been updated for the current architecture.
+

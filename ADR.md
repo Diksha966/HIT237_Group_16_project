@@ -57,7 +57,7 @@ This approach improves data consistency and makes it easier to fetch related dat
 
 #### Title: Use Class-Based Views for Handling Requests
 
-Status: Accepted
+Status: Superseded by ADR 7
 
 Context:
 
@@ -85,7 +85,7 @@ By using this approach, code duplication and maintainability can be improved. It
 
 #### Title: Use Django QuerySet API for Data Retrieval
 
-Status: Accepted
+Status: Superseded by ADR 7
 
 Context:
 
@@ -109,11 +109,11 @@ Consequences:
 
 This improves code readability and maintainability. It also lessens the possible pitfall of errors compared to the raw SQL. However, it may be less flexible for very complex queries.
 
-### ARD 5 ###
+### ADR 5 ###
 
 #### Title: Use Django Built-in Authentication System
 
-Status: Accepted
+Status: Superseded by ADR 8
 
 Context: 
 
@@ -151,4 +151,116 @@ Decision: We decided to use Django template inheritance, with creating a base te
 Code reference: templates/base.html, templates/home.html
 
 Consequences: This approach reduces code duplication and ensures a consistent user interface. It also makes it easier to update the layout. However, it requires understanding how templates extend from a base file.
+
+### ADR 7
+
+#### Title: Introduce a Service Layer for Business Rules
+
+Status: Accepted
+
+Context:
+
+As the application grew, CRUD logic was becoming mixed directly into class-based views. The team needed a place to centralise validation, relationship checks, and deletion rules so that views stayed thin and business rules were easier to test.
+
+Alternatives considered:
+
+One option was to keep business logic inside the views. Another option was to move the logic into a dedicated service layer.
+
+Keeping the logic in views would make the code harder to test and reuse. A service layer improves separation of concerns and supports explicit exception handling.
+
+Decision:
+
+We introduced housing/services.py and housing/exceptions.py to manage create, update, delete, listing, and summary operations for houses, residents, and maintenance requests. Views now call these service functions and translate service exceptions into form or message feedback.
+
+Code reference:
+
+housing/services.py, housing/exceptions.py, housing/views.py
+
+Consequences:
+
+Business rules such as resident-house consistency and guarded deletion are now reusable and testable. This makes the codebase easier to maintain, but adds a small amount of indirection compared with direct model saves.
+
+### ADR 8
+
+#### Title: Use Django Authentication with Logged-In Permission Boundaries
+
+Status: Accepted
+
+Context:
+
+The extended assignment requires user authentication and permission boundaries. The application needs to distinguish between public browsing and authenticated management actions.
+
+Alternatives considered:
+
+One option was to leave the app public. Another option was to build a custom authentication system. A third option was to use Django's built-in authentication framework with login-required restrictions on write operations.
+
+Leaving the app public would not satisfy the assignment. A custom auth system would add unnecessary security risk and maintenance cost. Django's built-in system is secure and already integrated with the framework.
+
+Decision:
+
+We implemented login, logout, and registration pages using Django's auth system. Create, update, and delete views for houses, residents, and maintenance requests are protected with LoginRequiredMixin, while list and home views remain public.
+
+Code reference:
+
+housing/views.py, housing/urls.py, housing/templates/registration/login.html, housing/templates/registration/register.html, housing_project/settings.py
+
+Consequences:
+
+This provides clear access boundaries and a better user experience, while keeping the authentication implementation straightforward. The trade-off is that the current access model is role-neutral and does not yet differentiate between staff and non-staff users.
+
+### ADR 9
+
+#### Title: Validate Related Objects and Guard Deletions in the Service Layer
+
+Status: Accepted
+
+Context:
+
+The application stores Residents, Houses, and MaintenanceRequests as linked records. If these relationships are edited incorrectly, the data model can become inconsistent or important records can be removed accidentally.
+
+Alternatives considered:
+
+One option was to rely only on form validation. Another option was to enforce relationship checks and deletion rules in the service layer.
+
+Form-only checks would be easier to bypass if the logic is reused in multiple views. Service-level checks ensure the same rule is applied everywhere.
+
+Decision:
+
+We added service-layer validation to ensure that a resident used in a maintenance request belongs to the selected house. We also blocked deleting a house when residents or requests still exist, and blocked deleting a resident when requests still exist.
+
+Code reference:
+
+housing/services.py, housing/views.py, housing/tests.py
+
+Consequences:
+
+This protects the integrity of the data model and prevents accidental data loss. It also creates user-visible validation errors, which are now handled consistently by the views.
+
+### ADR 10
+
+#### Title: Test Behaviour at the Service, View, and Permission Boundaries
+
+Status: Accepted
+
+Context:
+
+The assignment requires a meaningful test suite. The team needed a strategy that proves the architecture works without writing tests that simply mirror implementation details.
+
+Alternatives considered:
+
+One option was to focus only on model tests. Another option was to write tests only for view responses. A third option was to combine service, view, and permission tests that assert user-visible behaviour.
+
+Model-only tests would miss the new architecture. View-only tests would not confirm the service layer is enforcing business rules. A mixed approach gives broader coverage.
+
+Decision:
+
+We wrote tests for service behaviour, public versus protected view access, authenticated create actions, and guarded deletion rules. The tests focus on meaningful outcomes such as rejected invalid relationships, successful record creation, and login redirects.
+
+Code reference:
+
+housing/tests.py, housing/services.py, housing/views.py
+
+Consequences:
+
+The suite verifies the most important business rules and permission boundaries while remaining maintainable. It does not attempt to exhaustively test Django internals or every template detail, because those are already covered by the framework and would add little value.
 
